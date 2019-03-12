@@ -1,0 +1,23 @@
+{
+  "name": "webpack-demo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.0.1",
+    "css-loader": "^0.28.0",
+    "react": "^15.3.2",
+    "style-loader": "^0.18.0"
+  },
+  "dependencies": {
+    "webpack-split-by-path": "^2.0.0"
+  }
+}

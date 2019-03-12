@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #page {
+            display:flex;
+
+            /* Centering the page */
+            max-width:1200px;
+            margin:0 auto;
+        }
+        #main{
+            flex-flow: 1
+        }
+        aside {
+            /* Give the sidebar a default width, and prevent it from shrinking */
+            flex-shrink:0;
+            width:280px;
+        }
+        @media all and (max-width: 800px) {
+
+            #page {
+                flex-flow:column;
+            }
+
+            /* Make the sidebar take the entire width of the screen */
+
+            aside {
+                width:auto;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <section id="page">
+
+        <div id="main">
+            <!-- The content of the page will go here -->
+        </div>
+    
+        <aside>
+            <!-- This is the sidebar -->
+        </aside>
+    
+    </section>
+</body>
+</html>
