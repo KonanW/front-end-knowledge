@@ -35,7 +35,7 @@ console.log(a);
     缺陷：
     1.没有对传入参数校验，传入时为null因改返回null而不是｛｝
     1.没有考虑数组的兼容
-    3.对于对象的判断罗技不严谨。 typeog null === 'object';
+    3.对于对象的判断逻辑不严谨。 typeog null === 'object';
 */
 
 function cloneDeep(source) {
@@ -74,6 +74,9 @@ function cloneDeep2(source) {
                 target[key] = source[key];
             }
         }
+    }
+    function isObject(obj) {
+        return typeof obj === 'object' && obj !== null;
     }
     return target;
 }

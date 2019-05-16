@@ -1,4 +1,6 @@
 ### BFC
+定义： 浮动元素，绝对定位元素，非块级盒子的块级容器（inline-block,table-cells,table-captions）,以及overflow 值不为‘visible’的块级盒子。都会为他们的内容创建新的BFC。
+传送门：<https://www.w3cplus.com/css/understanding-bfc-and-margin-collapse.html>
 
 ##盒模型
 
