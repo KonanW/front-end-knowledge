@@ -1,0 +1,55 @@
+/**
+ *  promise 简易实现
+ */
+
+ class ePromise {
+   constructor(fn) {
+     //创建三格常量表示状态
+    const PENDING = 'pending';
+    const FULFILLED = 'fulfilled';
+    const REJECTED = 'rejected';
+    this.state = PENDING;  // 初始化的状态
+    this.value = null ;    // 保存回调传入的值
+    this.fulfilledcb = null;  // 保存成功时的回调
+    this.rejectedcb = null;  // 保存失败时的回调
+
+    const fulfill = value => {
+        this.fulfilled(value,FULFILLED,PENDING);
+    }
+
+    const reject = value => {
+      this.rejected(value,REJECTED,PENDING);
+    }
+
+    try {
+      fn(fulfill,reject);
+    }catch(e){
+      rejected(e);
+    }
+   }
+   fulfilled(value,FULFILLED,PENDING) {
+    if(this.state === PENDING){//只有pending状态才能进入resolved
+      this.state = FULFILLED;
+      this.value = value;
+      // this.fulfilledcb.map(cb => cb(value));
+      if(this.fulfilledcb) {
+        this.fulfilledcb(value);
+      }
+    }
+   }
+   rejected(value,REJECTED,PENDING) {
+     if(this.state === PENDING) {
+       this.state = REJECTED;
+       this.value = value;
+      //  this.rejectedcb.map(cb => cb(value));
+      if(this.rejectedcb) {
+        this.rejectedcb(value);
+      }
+     }
+   }
+
+   then(fulfill,reject) {
+      this.fulfilledcb = fulfill;
+      this.rejectedcb = reject;
+   }
+ }

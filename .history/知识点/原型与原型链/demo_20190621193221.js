@@ -1,0 +1,17 @@
+function Super(){
+  var name = "11";
+}
+
+Super.prototype.call = function() {
+  console.log(this.name);
+}
+
+function Sub() {
+ var name = "22";
+}
+
+Sub.prototype = new super() ; // 原型链的继承
+
+var i =new Sub();
+
+sub.call();
